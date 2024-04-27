@@ -12,6 +12,7 @@ This is a real-time chat application built using Django, Channels, and Daphne.
 2.Create a Django project:
   ```bash
   django-admin startproject myproject
+
 3.Install Channels and Daphne:
   ```bash
   pip install channels daphne
@@ -24,9 +25,11 @@ Add 'channels' and 'daphne' to your INSTALLED_APPS in settings.py.
 Set the ASGI application in settings.py:
   ```bash
   ASGI_APPLICATION = 'myproject.asgi.application'
+
 Create a new Django app for the chat functionality:
   ```bash
   python manage.py startapp chat
+
 Specify the URLs in urls.py to route to the chat app.
 Create a templates directory in the chat app for the login page and chat page HTML templates.
 Design
@@ -37,6 +40,7 @@ Before running the application, make sure to create and apply migrations:
   ```bash
   python manage.py makemigrations
   python manage.py migrate
+
 Migrations are necessary to create database tables for storing user information and chat messages.
 
 Creating Users
