@@ -8,56 +8,75 @@ This is a real-time chat application built using Django, Channels, and Daphne.
 
    ```bash
    pip install django
+   ```
 
-2.Create a Django project:
+2. Create a Django project:
 
-  ```bash
-  django-admin startproject myproject
+   ```bash
+   django-admin startproject myproject
+   ```
 
-3.Install Channels and Daphne:
+3. Install Channels and Daphne:
 
-  ```bash
-  pip install channels daphne
+   ```bash
+   pip install channels daphne
+   ```
 
-##Why ASGI, Daphne, and Channels?
+## Why ASGI, Daphne, and Channels?
+
 ASGI (Asynchronous Server Gateway Interface) is necessary for handling asynchronous tasks, such as WebSockets, in Django. Daphne is an ASGI server used to run Django applications with Channels, which allows for real-time features like chat.
 
-Setup
-Add 'channels' and 'daphne' to your INSTALLED_APPS in settings.py.
-Set the ASGI application in settings.py:
+## Setup
 
-  ```bash
-  ASGI_APPLICATION = 'myproject.asgi.application'
+- Add 'channels' and 'daphne' to your INSTALLED_APPS in settings.py.
+- Set the ASGI application in settings.py:
 
-Create a new Django app for the chat functionality:
+   ```python
+   ASGI_APPLICATION = 'myproject.asgi.application'
+   ```
 
-  ```bash
-  python manage.py startapp chat
+- Create a new Django app for the chat functionality:
 
-Specify the URLs in urls.py to route to the chat app.
-Create a templates directory in the chat app for the login page and chat page HTML templates.
-Design
+   ```bash
+   python manage.py startapp chat
+   ```
+
+- Specify the URLs in urls.py to route to the chat app.
+- Create a templates directory in the chat app for the login page and chat page HTML templates.
+
+## Design
+
 You can design the login page and chat page as you wish using HTML and CSS.
 
-Database Migration
+## Database Migration
+
 Before running the application, make sure to create and apply migrations:
 
-  ```bash
-  python manage.py makemigrations
-  python manage.py migrate
+   ```bash
+   python manage.py makemigrations
+   python manage.py migrate
+   ```
 
 Migrations are necessary to create database tables for storing user information and chat messages.
 
-Creating Users
+## Creating Users
+
 To create two users, use the following command:
 
-  ```bash
-  python manage.py createsuperuser  
+   ```bash
+   python manage.py createsuperuser
+   ```
 
-Run the server:
+## Running the Server
 
-  ```bash
-  python manage.py runserver
+Start the development server:
 
-Acknowledgement
-This project was developed with the help of GeeksforGeeks.
+   ```bash
+   python manage.py runserver
+   ```
+
+Open the server in your web browser at http://127.0.0.1:8000/.
+
+## Acknowledgement
+
+This project was developed with the help of [GeeksforGeeks](https://www.geeksforgeeks.org/realtime-chat-app-using-django/).
